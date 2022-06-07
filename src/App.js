@@ -10,9 +10,6 @@ import GuestRoute from "./utils/routes/GuestRoute";
 import Loading from "./components/Loading";
 import PageNotFound from "./page/PageNotFound";
 
-
-
-
 function App(){
     const [isLoagedIn, setisLoagedIn] = useState(false)
     const [isLoading, setisLoading] = useState(true)
@@ -64,9 +61,7 @@ function App(){
                                  
                         />) 
 
-                    }
-
-                    
+                    }                    
                     return(
                     <Route key={index} path={route.path} exact={route.exact} component={route.routeComponent}
                          

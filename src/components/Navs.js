@@ -19,16 +19,16 @@ export default function Navs() {
     }
 
     return (
-        <nav className="py-3 bg-gray-700 text-white flex justify-between">
+        <nav className="py-5 bg-gray-500 text-white flex justify-between">
                     <ul className="flex justify-between px-10">
                     <li className="mr-5">
                         <NavLink to = "/" exact = {true} activeClassName="text-yellow-500">Home</NavLink>
                     </li>
                     <li className="mr-5">
-                        <NavLink to = "/images" activeClassName="text-yellow-500">Images</NavLink>
+                        <NavLink to = "/images" activeClassName="text-yellow-500">Gallaries</NavLink>
                     </li>
                     <li className="mr-5">
-                        <NavLink to = "/images" activeClassName="text-yellow-500">PredictImage</NavLink>
+                        <NavLink to = "/predict" activeClassName="text-yellow-500">PredictImage</NavLink>
                     </li>
                     </ul>
                     <ul className="flex justify-between px-10">

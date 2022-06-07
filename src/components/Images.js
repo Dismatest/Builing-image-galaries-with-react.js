@@ -12,17 +12,13 @@ function Images() {
     function ImagesComponent(){
         return <AnimateSharedLayout>
             <InfiniteScroll dataLength={images.length} next={()=>setpage(page + 1)} hasMore={true}> {images.map((img, index) => <SingleImage image={img.urls.regular} handleRemove={handleRemove} index={index} key={index}/>)} </InfiniteScroll>
-            </AnimateSharedLayout>
-
+           </AnimateSharedLayout>
     }
 
     const [page, setpage] = useState(1)
     const [serchTerm, setserchTerm] = useState(null)
     const [images, setImages, errors, isLoading] = useFetchImages(page, serchTerm)
     
-   
-    
-
     function handleRemove(index){
       
        setImages(images.filter((image, i) => i !== index))
@@ -33,17 +29,14 @@ function Images() {
     function handleInput(e){
         const text = e.target.value
         debounce(()=> setserchTerm(text))
-       
     }
-
-   
     if(isLoading) 
     return < Loading />
         
     return (
-        <section>
+    <section className="p-10">
        <div className="my-5">
-           <input onChange={handleInput} type="text" className="w-full border shadow p-2" placeholder="Serch Photos"/>
+           <input onChange={handleInput} type="text" className="w-full border shadow p-2" placeholder="Serch Photos here"/>
        </div>
         <div className="gap-0" style={{columnCount:3}}>
             {errors.length > 0 && 
@@ -54,7 +47,6 @@ function Images() {
             </div>
             )
             }
-            
             <ImagesComponent />
             </div>
             
